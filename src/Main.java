@@ -13,7 +13,7 @@ public class Main {
     public static int ROWSTONE = 0;
     public static int COLSTONE = 0;
 
-    public static final char BUSH = '*'; // храст
+    public static final char BUSH = '*';
 
     public static boolean isGameOver = false;
     public static boolean youWin = false;
