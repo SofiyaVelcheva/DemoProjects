@@ -104,32 +104,31 @@ public class Main {
                 break;
         }
 
-        if (checkBorder(currentRow, currentCol)) { // ако следващата клетка е в граница
+        if (checkBorder(currentRow, currentCol)) {
             switch (matrix[currentRow][currentCol]) {
-                case ' ':                //следващата клетка е свободна
+                case ' ':
                     matrix[row][col] = ' ';
-                        ROWGUY = currentRow;
-                        COLGUY = currentCol;
-                        matrix[ROWGUY][COLGUY] = GUY;
+                    ROWGUY = currentRow;
+                    COLGUY = currentCol;
+                    matrix[ROWGUY][COLGUY] = GUY;
                     break;
                 case STONE:
-                    // дали пред STONE клетката е в граница
                     if (checkBorder(nextRow, nextCol)) {
                         switch (matrix[nextRow][nextCol]) {
                             case ' ':
                                 ROWSTONE = nextRow;
                                 COLSTONE = nextCol;
 
-                                checkPointStone(ROWSTONE, COLSTONE); //проверки за клетката пред камъка
+                                checkPointStone(ROWSTONE, COLSTONE);
 
                                 matrix[ROWSTONE][COLSTONE] = STONE;
 
                                 checkSpecificPoint(ROWSTONE, COLSTONE);
 
                                 matrix[row][col] = ' ';
-                                    ROWGUY = currentRow;
-                                    COLGUY = currentCol;
-                                    matrix[ROWGUY][COLGUY] = GUY;
+                                ROWGUY = currentRow;
+                                COLGUY = currentCol;
+                                matrix[ROWGUY][COLGUY] = GUY;
                                 break;
                             case 'E':
                                 youWin = true;
@@ -249,7 +248,7 @@ public class Main {
 
         switch (LEVEL) {
             case 1:
-                LEVEL = 5; // 5 ATTENTION ATTENTION ATTENTION ATTENTION
+                LEVEL = 5;
                 SIZE = 20;
                 break;
             case 2:
